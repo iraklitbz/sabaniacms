@@ -369,6 +369,60 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
+  collectionName: 'apartments';
+  info: {
+    description: '';
+    displayName: 'Apartment';
+    pluralName: 'apartments';
+    singularName: 'apartment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    checkin: Schema.Attribute.String;
+    checkout: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    Direction: Schema.Attribute.String & Schema.Attribute.Required;
+    discount: Schema.Attribute.Component<'discount.discount', true>;
+    feature: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    list: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        ['Gym', 'Parking']
+      > &
+      Schema.Attribute.DefaultTo<'[]'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::apartment.apartment'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    privateName: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    rooms: Schema.Attribute.DynamicZone<
+      [
+        'rooms.rooms',
+        'kitchen.kitchen',
+        'bathroom.bathroom',
+        'living-room.living-room',
+      ]
+    >;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    smoobuID: Schema.Attribute.UID & Schema.Attribute.Required;
+    standards: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -878,6 +932,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::apartment.apartment': ApiApartmentApartment;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

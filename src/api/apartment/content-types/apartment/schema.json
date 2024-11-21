@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apartments",
+  "info": {
+    "singularName": "apartment",
+    "pluralName": "apartments",
+    "displayName": "Apartment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "privateName": {
+      "type": "string"
+    },
+    "smoobuID": {
+      "type": "uid",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "Direction": {
+      "type": "string",
+      "required": true
+    },
+    "feature": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "standards": {
+      "type": "text"
+    },
+    "checkin": {
+      "type": "string"
+    },
+    "checkout": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "component",
+      "repeatable": true,
+      "component": "discount.discount"
+    },
+    "rooms": {
+      "type": "dynamiczone",
+      "components": [
+        "rooms.rooms",
+        "kitchen.kitchen",
+        "bathroom.bathroom",
+        "living-room.living-room"
+      ]
+    },
+    "list": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "Gym",
+        "Parking"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    }
+  }
+}

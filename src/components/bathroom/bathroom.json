@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_bathroom_bathrooms",
+  "info": {
+    "displayName": "bathroom",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "list": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "WC",
+        "Shower"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

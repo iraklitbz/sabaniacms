@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_discount_discounts",
+  "info": {
+    "displayName": "discount",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "days": {
+      "type": "integer"
+    },
+    "percentageDiscount": {
+      "type": "integer"
+    }
+  }
+}
