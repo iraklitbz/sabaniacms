@@ -381,13 +381,13 @@ export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    address: Schema.Attribute.Component<'address.address', false>;
     checkin: Schema.Attribute.String;
     checkout: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    Direction: Schema.Attribute.String & Schema.Attribute.Required;
     discount: Schema.Attribute.Component<'discount.discount', true>;
     feature: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
@@ -404,16 +404,10 @@ export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    photos: Schema.Attribute.Component<'gallery.gallery', true>;
     privateName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    rooms: Schema.Attribute.DynamicZone<
-      [
-        'rooms.rooms',
-        'kitchen.kitchen',
-        'bathroom.bathroom',
-        'living-room.living-room',
-      ]
-    >;
+    rooms: Schema.Attribute.Component<'accommodation.rooms', false>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     smoobuID: Schema.Attribute.UID & Schema.Attribute.Required;
     standards: Schema.Attribute.Text;

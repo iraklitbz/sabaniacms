@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_accommodation_rooms",
+  "info": {
+    "displayName": "rooms",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "rooms": {
+      "type": "integer"
+    },
+    "beds": {
+      "type": "integer"
+    },
+    "WC": {
+      "type": "integer"
+    },
+    "guests": {
+      "type": "integer"
+    }
+  }
+}

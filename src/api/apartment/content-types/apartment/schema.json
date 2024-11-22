@@ -31,10 +31,6 @@
       "targetField": "name",
       "required": true
     },
-    "Direction": {
-      "type": "string",
-      "required": true
-    },
     "feature": {
       "type": "media",
       "multiple": false,
@@ -58,15 +54,6 @@
       "repeatable": true,
       "component": "discount.discount"
     },
-    "rooms": {
-      "type": "dynamiczone",
-      "components": [
-        "rooms.rooms",
-        "kitchen.kitchen",
-        "bathroom.bathroom",
-        "living-room.living-room"
-      ]
-    },
     "list": {
       "type": "customField",
       "default": "[]",
@@ -75,6 +62,21 @@
         "Parking"
       ],
       "customField": "plugin::multi-select.multi-select"
+    },
+    "rooms": {
+      "type": "component",
+      "repeatable": false,
+      "component": "accommodation.rooms"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.address"
+    },
+    "photos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gallery.gallery"
     }
   }
 }

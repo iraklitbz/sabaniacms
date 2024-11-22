@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_address_addresses",
+  "info": {
+    "displayName": "address",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "street": {
+      "type": "string"
+    },
+    "postalPode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    }
+  }
+}
