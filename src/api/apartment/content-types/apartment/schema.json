@@ -77,6 +77,11 @@
       "type": "component",
       "repeatable": true,
       "component": "gallery.gallery"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
     }
   }
 }
