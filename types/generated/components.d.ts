@@ -18,12 +18,13 @@ export interface AccommodationRooms extends Struct.ComponentSchema {
 export interface AddressAddress extends Struct.ComponentSchema {
   collectionName: 'components_address_addresses';
   info: {
+    description: '';
     displayName: 'address';
     icon: 'pinMap';
   };
   attributes: {
     city: Schema.Attribute.String;
-    postalPode: Schema.Attribute.String;
+    postalCode: Schema.Attribute.String;
     street: Schema.Attribute.String;
   };
 }

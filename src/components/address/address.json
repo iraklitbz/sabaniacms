@@ -2,14 +2,15 @@
   "collectionName": "components_address_addresses",
   "info": {
     "displayName": "address",
-    "icon": "pinMap"
+    "icon": "pinMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "street": {
       "type": "string"
     },
-    "postalPode": {
+    "postalCode": {
       "type": "string"
     },
     "city": {
