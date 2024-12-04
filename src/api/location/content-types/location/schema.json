@@ -40,6 +40,12 @@
         "images",
         "files"
       ]
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
     }
   }
 }

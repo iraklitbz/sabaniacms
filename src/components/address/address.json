@@ -15,6 +15,12 @@
     },
     "city": {
       "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
     }
   }
 }

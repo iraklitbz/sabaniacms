@@ -394,7 +394,46 @@ export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
     list: Schema.Attribute.JSON &
       Schema.Attribute.CustomField<
         'plugin::multi-select.multi-select',
-        ['Gym', 'Parking']
+        [
+          'Voll ausgestattete K\u00FCche',
+          'Grundlegende K\u00FCchenutensilien',
+          'Esstisch mit St\u00FChlen',
+          'K\u00FChlschrank',
+          'Geschirrsp\u00FCler',
+          'Filter-Kaffeemaschine',
+          'Pads-Kaffeemaschine',
+          'Wasserkocher',
+          '\u00D6ffentlicher Parkplatz',
+          'Privater Parkplatz',
+          'Heizung',
+          'Duschgel',
+          'Waschmaschine',
+          'W\u00E4schetrockner',
+          'B\u00FCgeleisen',
+          'Haartrockner',
+          'Handt\u00FCcher',
+          'Bettw\u00E4sche',
+          'Smart-TV (mit Netflix)',
+          'Billardtisch',
+          'Dartscheibe',
+          'Gesellschaftsspiele',
+          'B\u00FCcher',
+          'Garten mit Grillm\u00F6glichkeit (auf Anfrage)',
+          'Terrassenm\u00F6bel',
+          'Rauchmelder',
+          'Kohlenmonoxidmelder',
+          'Privater Zugang',
+          'WLAN',
+          'Selbstst\u00E4ndiges Check-in per Schl\u00FCsselbox',
+          'Selbstst\u00E4ndiges Check-in per digitalem T\u00FCrschl\u00FCssel (Nuki)',
+          'Gep\u00E4ckaufbewahrung (auf Anfrage)',
+          'Betten 90x200 cm',
+          'Betten 140x200 cm',
+          'Betten 160x200 cm',
+          'Schlafsofa',
+          'Kleiderschrank',
+          'Reisebett f\u00FCr Kinder (auf Anfrage verf\u00FCgbar)',
+        ]
       > &
       Schema.Attribute.DefaultTo<'[]'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -438,12 +477,14 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.Text;
     feature: Schema.Attribute.Media<'images' | 'files'>;
     gallery: Schema.Attribute.Media<'images' | 'files', true>;
+    latitude: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::location.location'
     > &
       Schema.Attribute.Private;
+    longitude: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'city'>;
     updatedAt: Schema.Attribute.DateTime;
