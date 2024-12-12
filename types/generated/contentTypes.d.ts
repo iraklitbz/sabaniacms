@@ -445,10 +445,12 @@ export interface ApiApartmentApartment extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.Relation<'oneToOne', 'api::location.location'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     photos: Schema.Attribute.Component<'gallery.gallery', true>;
-    price: Schema.Attribute.Decimal;
+    price: Schema.Attribute.Component<'price.price', false> &
+      Schema.Attribute.Required;
     privateName: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rooms: Schema.Attribute.Component<'accommodation.rooms', false>;
+    shortDescription: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     smoobuID: Schema.Attribute.UID & Schema.Attribute.Required;
     standards: Schema.Attribute.Text;

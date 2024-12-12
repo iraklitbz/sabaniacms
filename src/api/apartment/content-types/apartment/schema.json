@@ -120,7 +120,13 @@
       "target": "api::location.location"
     },
     "price": {
-      "type": "decimal"
+      "type": "component",
+      "repeatable": false,
+      "component": "price.price",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string"
     }
   }
 }

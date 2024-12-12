@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_price_prices",
+  "info": {
+    "displayName": "price",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "travelers": {
+      "type": "integer",
+      "required": true
+    },
+    "maxTravelers": {
+      "type": "integer",
+      "required": true
+    },
+    "increasePrice": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

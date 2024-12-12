@@ -55,6 +55,21 @@ export interface GalleryGallery extends Struct.ComponentSchema {
   };
 }
 
+export interface PricePrice extends Struct.ComponentSchema {
+  collectionName: 'components_price_prices';
+  info: {
+    description: '';
+    displayName: 'price';
+    icon: 'database';
+  };
+  attributes: {
+    increasePrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    maxTravelers: Schema.Attribute.Integer & Schema.Attribute.Required;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    travelers: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -62,6 +77,7 @@ declare module '@strapi/strapi' {
       'address.address': AddressAddress;
       'discount.discount': DiscountDiscount;
       'gallery.gallery': GalleryGallery;
+      'price.price': PricePrice;
     }
   }
 }
