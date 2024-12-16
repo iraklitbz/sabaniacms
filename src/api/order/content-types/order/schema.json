@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderID": {
+      "type": "uid"
+    },
+    "email": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "checkin": {
+      "type": "string"
+    },
+    "checkout": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "travelers": {
+      "type": "integer"
+    },
+    "apartment": {
+      "type": "string"
+    },
+    "amountPayed": {
+      "type": "string"
+    }
+  }
+}
