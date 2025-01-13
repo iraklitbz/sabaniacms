@@ -18,9 +18,6 @@
     "email": {
       "type": "string"
     },
-    "fullName": {
-      "type": "string"
-    },
     "checkin": {
       "type": "string"
     },
@@ -38,6 +35,20 @@
     },
     "amountPayed": {
       "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.address"
     }
   }
 }

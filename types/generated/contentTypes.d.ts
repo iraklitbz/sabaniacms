@@ -507,6 +507,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    address: Schema.Attribute.Component<'address.address', false>;
     amountPayed: Schema.Attribute.String;
     apartment: Schema.Attribute.String;
     checkin: Schema.Attribute.String;
@@ -516,11 +517,13 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
     email: Schema.Attribute.String;
-    fullName: Schema.Attribute.String;
+    firstName: Schema.Attribute.String;
+    lastName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
     orderID: Schema.Attribute.UID;
+    phone: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     travelers: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;

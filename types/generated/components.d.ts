@@ -25,6 +25,7 @@ export interface AddressAddress extends Struct.ComponentSchema {
   attributes: {
     city: Schema.Attribute.String;
     latitude: Schema.Attribute.String;
+    location: Schema.Attribute.String;
     longitude: Schema.Attribute.String;
     postalCode: Schema.Attribute.String;
     street: Schema.Attribute.String;
