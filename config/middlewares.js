@@ -1,14 +1,6 @@
 module.exports = [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
-  'strapi::cors',
-  'strapi::poweredBy',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
   {
     name: 'strapi::security',
     config: {
@@ -17,16 +9,34 @@ module.exports = [
         directives: {
           'connect-src': ["'self'", 'https:'],
           'img-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'res.cloudinary.com'],
-          'media-src': [
-            "'self'",
-            'data:',
-            'blob:',
-            'market-assets.strapi.io',
-            'res.cloudinary.com',
-          ],
+          'media-src': ["'self'", 'data:', 'blob:', 'market-assets.strapi.io', 'res.cloudinary.com'],
           upgradeInsecureRequests: null,
         },
       },
     },
-  }
+  },
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: [
+        'https://sabania.eu',
+        'https://www.sabania.eu',
+        'http://localhost:3000',
+      ],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      keepHeaderOnError: true,
+    },
+  },
+  'strapi::poweredBy',
+  'strapi::query',
+  'strapi::body',
+  {
+    name: 'strapi::session',
+    config: {
+      secure: false,
+    },
+  },
+  'strapi::favicon',
+  'strapi::public',
 ];
