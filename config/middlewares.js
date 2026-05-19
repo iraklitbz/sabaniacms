@@ -34,10 +34,10 @@ module.exports = [
   {
     name: 'strapi::session',
     config: {
-      rolling: true,
-      renew: true,
-      secure: true,
-      sameSite: 'lax',
+      cookie: {
+        secure: false,
+        sameSite: 'lax',
+      },
     },
   },
   'strapi::favicon',
