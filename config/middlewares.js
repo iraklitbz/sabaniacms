@@ -31,15 +31,7 @@ module.exports = [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
-  {
-    name: 'strapi::session',
-    config: {
-      cookie: {
-        secure: false,
-        sameSite: 'lax',
-      },
-    },
-  },
+  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
